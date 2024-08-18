@@ -86,12 +86,12 @@ protected:
     uint8_t GetBtnPress(void);
 
       // -- sleep
-    void SetSleep(void);
-    void DeepSleep(uint64_t time_in_us = 0);
-    void LightSleep(uint64_t time_in_us = 0);
+    //void SetSleep(void);
+    //void DeepSleep(uint64_t time_in_us = 0);
+    //void LightSleep(uint64_t time_in_us = 0);
 
     // void SetChargeVoltage( uint8_t );
-    void  SetChargeCurrent( uint8_t );
+    //void  SetChargeCurrent( uint8_t );
     float GetBatCurrent();
     float GetVinVoltage();
     float GetVinCurrent();
@@ -104,15 +104,15 @@ protected:
     float GetBatCoulombInput();
     float GetBatCoulombOut();
     uint8_t GetWarningLevel(void);
-    void SetCoulombClear();
-    void SetLDO2( bool State );
-    void SetLDO3( bool State );
-    void SetAdcState(bool State);
+    //void SetCoulombClear();
+    //void SetLDO2( bool State );
+    //void SetLDO3( bool State );
+    //void SetAdcState(bool State);
 
-    void PowerOff();
+    //void PowerOff();
 
 
-    void Write1Byte( uint8_t Addr ,  uint8_t Data );
+    //void Write1Byte( uint8_t Addr ,  uint8_t Data );
     uint8_t Read8bit( uint8_t Addr );
     uint16_t Read12Bit( uint8_t Addr);
     uint16_t Read13Bit( uint8_t Addr);
