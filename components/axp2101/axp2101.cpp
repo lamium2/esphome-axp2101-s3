@@ -330,7 +330,7 @@ void AXP2101Component::update() {
       this->batterycharging_bsensor_->publish_state(vcharging);
     }
 
-    UpdateBrightness();
+    //UpdateBrightness();
 }
 
 // void AXP2101Component::Write1Byte( uint8_t Addr ,  uint8_t Data )
