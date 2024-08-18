@@ -333,10 +333,10 @@ void AXP2101Component::update() {
     UpdateBrightness();
 }
 
-void AXP2101Component::Write1Byte( uint8_t Addr ,  uint8_t Data )
-{
-    this->write_byte(Addr, Data);
-}
+// void AXP2101Component::Write1Byte( uint8_t Addr ,  uint8_t Data )
+// {
+//     this->write_byte(Addr, Data);
+// }
 
 uint8_t AXP2101Component::Read8bit( uint8_t Addr )
 {
@@ -407,33 +407,33 @@ void AXP2101Component::ReadBuff( uint8_t Addr , uint8_t Size , uint8_t *Buff )
     this->read_bytes(Addr, Buff, Size);
 }
 
-void AXP2101Component::UpdateBrightness()
-{
-    if (brightness_ == curr_brightness_)
-    {
-        return;
-    }
+// void AXP2101Component::UpdateBrightness()
+// {
+//     if (brightness_ == curr_brightness_)
+//     {
+//         return;
+//     }
 
-    ESP_LOGD(TAG, "Brightness=%f (Curr: %f)", brightness_, curr_brightness_);
-    curr_brightness_ = brightness_;
+//     ESP_LOGD(TAG, "Brightness=%f (Curr: %f)", brightness_, curr_brightness_);
+//     curr_brightness_ = brightness_;
 
-    const uint8_t c_min = 7;
-    const uint8_t c_max = 12;
-    auto ubri = c_min + static_cast<uint8_t>(brightness_ * (c_max - c_min));
+//     const uint8_t c_min = 7;
+//     const uint8_t c_max = 12;
+//     auto ubri = c_min + static_cast<uint8_t>(brightness_ * (c_max - c_min));
 
-    if (ubri > c_max)
-    {
-        ubri = c_max;
-    }
-    switch (this->model_) {
-      case AXP2101_M5CORE2:
-      {
-        uint8_t buf = Read8bit( 0x27 );
-        Write1Byte( 0x27 , ((buf & 0x80) | (ubri << 3)) );
-        break;
-      }
-    }
-}
+//     if (ubri > c_max)
+//     {
+//         ubri = c_max;
+//     }
+//     switch (this->model_) {
+//       case AXP2101_M5CORE2:
+//       {
+//         uint8_t buf = Read8bit( 0x27 );
+//         Write1Byte( 0x27 , ((buf & 0x80) | (ubri << 3)) );
+//         break;
+//       }
+//     }
+// }
 
 bool AXP2101Component::GetBatState()
 {
@@ -456,25 +456,25 @@ uint8_t AXP2101Component::GetBatData()
 //get discharge data: uint32_t GetCoulombdischargeData(void);
 //get coulomb val affter calculation: float GetCoulombData(void);
 //------------------------------------------
-void  AXP2101Component::EnableCoulombcounter(void)
-{
-    Write1Byte( 0xB8 , 0x80 );
-}
+// void  AXP2101Component::EnableCoulombcounter(void)
+// {
+//     Write1Byte( 0xB8 , 0x80 );
+// }
 
-void  AXP2101Component::DisableCoulombcounter(void)
-{
-    Write1Byte( 0xB8 , 0x00 );
-}
+// void  AXP2101Component::DisableCoulombcounter(void)
+// {
+//     Write1Byte( 0xB8 , 0x00 );
+// }
 
-void  AXP2101Component::StopCoulombcounter(void)
-{
-    Write1Byte( 0xB8 , 0xC0 );
-}
+// void  AXP2101Component::StopCoulombcounter(void)
+// {
+//     Write1Byte( 0xB8 , 0xC0 );
+// }
 
-void  AXP2101Component::ClearCoulombcounter(void)
-{
-    Write1Byte( 0xB8 , 0xA0 );
-}
+// void  AXP2101Component::ClearCoulombcounter(void)
+// {
+//     Write1Byte( 0xB8 , 0xA0 );
+// }
 
 uint32_t AXP2101Component::GetCoulombchargeData(void)
 {

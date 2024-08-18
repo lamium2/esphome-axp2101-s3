@@ -14,6 +14,7 @@ namespace axp2101 {
 
 enum AXP2101Model {
   AXP2101_M5CORE2,
+  AXP2101_M5CORES3,
 };
 
 #define SLEEP_MSEC(us) (((uint64_t)us) * 1000L)
@@ -61,14 +62,14 @@ protected:
      * LD03: Vibration Motor
      */
 
-    void  UpdateBrightness();
+    //void  UpdateBrightness();
     bool  GetBatState();
     uint8_t  GetBatData();
 
-    void  EnableCoulombcounter(void);
-    void  DisableCoulombcounter(void);
-    void  StopCoulombcounter(void);
-    void  ClearCoulombcounter(void);
+    //void  EnableCoulombcounter(void);
+    //void  DisableCoulombcounter(void);
+    //void  StopCoulombcounter(void);
+    //void  ClearCoulombcounter(void);
     uint32_t GetCoulombchargeData(void);
     uint32_t GetCoulombdischargeData(void);
     float GetCoulombData(void);

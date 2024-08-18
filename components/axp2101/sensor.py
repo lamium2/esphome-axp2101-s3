@@ -82,6 +82,6 @@ def to_code(config):
         sens = yield binary_sensor.new_binary_sensor(conf)
         cg.add(var.set_batterycharging_bsensor(sens))
 
-    if CONF_BRIGHTNESS in config:
-        conf = config[CONF_BRIGHTNESS]
-        cg.add(var.set_brightness(conf))
+    # if CONF_BRIGHTNESS in config:
+    #     conf = config[CONF_BRIGHTNESS]
+    #     cg.add(var.set_brightness(conf))
